@@ -58,5 +58,36 @@ router.delete("/:id", async (req, res) => {
 });
 
 // Get Post Route
-router.get("/:id", async (req, res) => {});
+router.get("/:id", async (req, res) => {
+  try {
+    const post = await Post.findById(req.params.id);
+    res.status(200).json(post);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// Route for all posts by user specific
+router.get("/", async (req, res) => {
+  const username = req.query.user;
+  const categoryName = req.query.cat;
+  try {
+    let posts;
+    if (username) {
+      posts = await Post.find({ username });
+    } else if (categoryName) {
+      posts = await Post.find({
+        categories: {
+          $in: [categoryName],
+        },
+      });
+      // fetch all posts if no users or cat name
+    } else {
+      posts = await Post.find();
+    }
+    res.status(200).json(posts);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 module.exports = router;
