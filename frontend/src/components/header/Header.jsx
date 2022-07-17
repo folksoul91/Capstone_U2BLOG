@@ -1,4 +1,4 @@
-import "./header.css";
+import "./header.scss";
 import mainpage from "../../assets/images/mainpage.jpg";
 
 const Header = () => {
