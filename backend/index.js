@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const authRoute = require("./routes/auth");
 const userRoute = require("./routes/users");
+const postRoute = require("./routes/posts");
 const PORT = 3000;
 
 dotenv.config();
@@ -21,6 +22,7 @@ mongoose
 
 app.use("/backend/auth", authRoute);
 app.use("/backend/users", userRoute);
+app.use("/backend/posts", postRoute);
 
 app.listen(PORT, () => {
   console.log(`Listening on PORT ${PORT}`);
