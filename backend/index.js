@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const authRoute = require("./routes/auth");
 const userRoute = require("./routes/users");
 const postRoute = require("./routes/posts");
+const categoryRoute = require("./routes/categories");
 const PORT = 3000;
 
 dotenv.config();
@@ -23,6 +24,7 @@ mongoose
 app.use("/backend/auth", authRoute);
 app.use("/backend/users", userRoute);
 app.use("/backend/posts", postRoute);
+app.use("/backend/categories", categoryRoute);
 
 app.listen(PORT, () => {
   console.log(`Listening on PORT ${PORT}`);
