@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import ProfilePic from "../../assets/images/profile1.jpg";
 import "./sidebar.scss";
 
@@ -28,7 +29,9 @@ const Sidebar = () => {
         <span className="sidebarTitle">CATEGORIES</span>
         <ul className="sidebarList">
           {cats.map((c) => (
+            <Link to={`/?cat=${c.name}`} className="link">
             <li className="sidebarListItem">{c.name}</li>
+            </Link>
             ))}
         </ul>
       </div>
