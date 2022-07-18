@@ -1,31 +1,27 @@
-import BodyPic from "../../assets/images/travel2.jpg";
+import { Link } from "react-router-dom";
 import "./post.scss";
 
-const Post = () => {
+const Post = ({ post }) => {
   return (
     <div className="post">
-      <img className="postImg" src={BodyPic} alt="" />
+      {post.photo && (
+        <img className="postImg" src={post.photo} alt="post img" />
+      )}
       <div className="postInfo">
         <div className="postCats">
-          <span className="postCat">Travel</span>
-          <span className="postCat">Movies</span>
+          {post.categories.map((c) => (
+            <span className="postCat">{c.name}</span>
+          ))}
         </div>
-        <span className="postTitle">Lorem ipsum dolor sit amet</span>
+        <Link to={`/post/${post._id}`} className="link">
+          <span className="postTitle">{post.title}</span>
+        </Link>
         <hr />
-        <span className="postDate">1 hour ago</span>
+        <span className="postDate">
+          {new Date(post.createdAt).toDateString()}
+        </span>
       </div>
-      <p className="postDesc">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque neque
-        minima non tenetur repellendus sapiente doloremque aliquam eum eligendi
-        est debitis odio in perspiciatis, ipsum, saepe hic similique! Autem,
-        deserunt. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Itaque neque minima non tenetur repellendus sapiente doloremque aliquam
-        eum eligendi est debitis odio in perspiciatis, ipsum, saepe hic
-        similique! Autem, deserunt. Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Itaque neque minima non tenetur repellendus sapiente
-        doloremque aliquam eum eligendi est debitis odio in perspiciatis, ipsum,
-        saepe hic similique! Autem, deserunt.
-      </p>
+      <p className="postDesc">{post.description}</p>
     </div>
   );
 };
