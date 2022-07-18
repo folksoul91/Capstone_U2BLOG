@@ -7,7 +7,7 @@ const userRoute = require("./routes/users");
 const postRoute = require("./routes/posts");
 const categoryRoute = require("./routes/categories");
 const multer = require("multer");
-const PORT = 3000;
+const PORT = 4000;
 
 dotenv.config();
 app.use(express.json());
