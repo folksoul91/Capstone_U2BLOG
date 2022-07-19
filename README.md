@@ -67,3 +67,4 @@ For future improvements I will include...
 - Use React redux to improve the performance of the web app. 
 - Fix minor bugs, ex. delete account button.
 - Link the category to the created post and pull them all together in a single page. 
+- Work on contact me page.
