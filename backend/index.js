@@ -48,5 +48,5 @@ mongoose
   });
 
   app.listen(process.env.PORT || 4000, () => {
-    console.log(`Backend is running on ${PORT}.`);
+    console.log(`Backend is running on 4000`);
   });
