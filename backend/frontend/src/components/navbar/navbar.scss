@@ -8,6 +8,7 @@
   align-items: center;
   font-family: "Josefin Sans", sans-serif;
   z-index: 999;
+  background-color: #F2E8DF;
 }
 
 .topLeft,
@@ -50,11 +51,4 @@
   font-size: 18px;
   font-weight: 300;
   cursor: pointer;
-}
-
-.topSearchIcon {
-  font-size: 18px;
-  color: rgb(124, 122, 122);
-  cursor: pointer;
-  margin-left: 15px;
 }

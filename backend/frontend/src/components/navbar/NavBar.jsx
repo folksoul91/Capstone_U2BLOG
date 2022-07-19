@@ -5,7 +5,7 @@ import "./navbar.scss";
 
 const NavBar = () => {
   const { user, dispatch } = useContext(Context);
-  const PF = "http://localhost:4000/images/"
+  const PF = "https://ublog2app.herokuapp.com/images/"
 
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });
@@ -13,10 +13,15 @@ const NavBar = () => {
   return (
     <div className="top">
       <div className="topLeft">
-        <i className="topIcon fab fa-facebook-square"></i>
+        <a href="https://www.linkedin.com/in/dktechinnovator/" target="_blank" rel="noreferrer">
+        <i className="topIcon fa-brands fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/folksoul91" target="_blank" rel="noreferrer">
+        <i className="topIcon fa-brands fa-github-square"></i>
+        </a>
         <i className="topIcon fab fa-twitter-square"></i>
-        <i className="topIcon fab fa-pinterest-square"></i>
-        <i className="topIcon fab fa-instagram-square"></i>
+        <i className="topIcon fa-brands fa-facebook-square"></i>
+        
       </div>
       <div className="topCenter">
         <ul className="topList">
@@ -26,7 +31,7 @@ const NavBar = () => {
             </Link>
           </li>
           <li className="topListItem">
-            <Link className="link" to="/">
+            <Link className="link" to="/about">
               ABOUT
             </Link>
           </li>
@@ -37,7 +42,7 @@ const NavBar = () => {
           </li>
           <li className="topListItem">
             <Link className="link" to="/write">
-              WRITE
+              BLOG
             </Link>
           </li>
           <li className="topListItem" onClick={handleLogout}>
@@ -64,7 +69,6 @@ const NavBar = () => {
             </li>
           </ul>
         )}
-        <i className="topSearchIcon fas fa-search"></i>
       </div>
     </div>
   );

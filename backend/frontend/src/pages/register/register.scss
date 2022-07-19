@@ -10,12 +10,14 @@
 
 .registerTitle {
   font-size: 50px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .registerForm {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .registerForm > label {
@@ -36,6 +38,7 @@
   border: none;
   border-radius: 10px;
   padding: 10px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .registerLoginButton {
@@ -48,9 +51,10 @@
   padding: 10px;
   border-radius: 10px;
   border: none;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .errMessage {
-  color:rgb(237, 16, 16);
+  color:rgb(230, 23, 23);
   margin-top: 10px;
 }

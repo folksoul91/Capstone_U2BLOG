@@ -27,18 +27,18 @@ const Login = () => {
     <div className="login">
       <span className="loginTitle">Login</span>
       <form className="loginForm" onSubmit={handleSubmit}>
-        <label>Username</label>
+        <label className="loginInt">Username</label>
         <input
           type="text"
           className="loginInput"
-          placeholder="Enter your username..."
+          placeholder="Enter your username"
           ref={userRef}
         />
-        <label>Password</label>
+        <label className="loginInt">Password</label>
         <input
           type="password"
           className="loginInput"
-          placeholder="Enter your password..."
+          placeholder="Enter your password"
           ref={passwordRef}
         />
         <button className="loginButton" type="submit" disabled={isFetching}>

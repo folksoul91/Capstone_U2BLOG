@@ -1,0 +1,36 @@
+
+
+.about {
+  position: absolute;
+  left:25%;
+  top:50%;
+  transform: translateY(-50%);
+  width: 50%;
+}
+
+.container {
+  display: flex;
+  margin:auto 0;
+  height: 100%;
+}
+
+h1 {
+  font-size: 60px;
+  font-family: "poppins";
+  color: rgba(23, 23, 23, 0.742);
+  font-weight: 400;
+  margin-top: 0;
+  position: relative;
+  margin-bottom: 40px;
+  left: 10px;
+}
+
+p {
+  font-style: 13px;
+  color: #000;
+  font-family: "poppins";
+  font-weight: 300;
+  min-width: fit-content;
+  animation: pulse 1s;
+}
+

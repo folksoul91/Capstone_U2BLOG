@@ -22,8 +22,7 @@ const Sidebar = () => {
           alt=""
         />
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate qui
-          necessitatibus nostrum illum reprehenderit.
+          Hello there, my name is Dane! I'm a full stack developer who is looking for a role in established tech company! Please reach out to be via Linkedin or any of the social platform! 
         </p>
       </div>
       <div className="sidebarItem">
@@ -37,12 +36,16 @@ const Sidebar = () => {
         </ul>
       </div>
       <div className="sidebarItem">
-        <span className="sidebarTitle">FOLLOW US</span>
+        <span className="sidebarTitle">FOLLOW ME</span>
         <div className="sidebarSocial">
+          <a className="link" href="https://www.linkedin.com/in/dktechinnovator/" target="_blank" rel="noreferrer">
+        <i className="sidebarIcon fa-brands fa-linkedin"></i>
+        </a>
+        <a className="link" href="https://github.com/folksoul91" target="_blank" rel="noreferrer">
+        <i className="sidebarIcon fa-brands fa-github-square"></i>
+        </a>
           <i className="sidebarIcon fab fa-facebook-square"></i>
           <i className="sidebarIcon fab fa-twitter-square"></i>
-          <i className="sidebarIcon fab fa-pinterest-square"></i>
-          <i className="sidebarIcon fab fa-instagram-square"></i>
         </div>
       </div>
     </div>
