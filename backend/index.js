@@ -8,7 +8,7 @@ const postRoute = require("./routes/posts");
 const categoryRoute = require("./routes/categories");
 const multer = require("multer");
 const path = require("path");
-const PORT = 4000;
+
 
 dotenv.config();
 app.use(express.json());
@@ -41,6 +41,12 @@ mongoose
   app.use("/backend/posts", postRoute);
   app.use("/backend/categories", categoryRoute);
   
-  app.listen(PORT, () => {
+  app.use(express.static(path.join(__dirname, "/frontend/build")))
+
+  app.get('*', (req,res)=>{
+    res.sendFile(path.join(__dirname, '/frontend/build', 'index.html'));
+  });
+
+  app.listen(process.env.PORT || 4000, () => {
     console.log(`Backend is running on ${PORT}.`);
   });
