@@ -1,62 +1,62 @@
 const router = require("express").Router();
 const Post = require("../models/Post");
 
-// Create Post Route
+//CREATE POST
 router.post("/", async (req, res) => {
   const newPost = new Post(req.body);
   try {
-    const savePost = await newPost.save();
-    res.status(200).json(savePost);
+    const savedPost = await newPost.save();
+    res.status(200).json(savedPost);
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-// Update Post Route
+//UPDATE POST
 router.put("/:id", async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);
     if (post.username === req.body.username) {
       try {
-        const updatePost = await Post.findByIdAndUpdate(
+        const updatedPost = await Post.findByIdAndUpdate(
           req.params.id,
           {
             $set: req.body,
           },
           { new: true }
         );
-        res.status(200).json(updatePost);
+        res.status(200).json(updatedPost);
       } catch (err) {
         res.status(500).json(err);
       }
     } else {
-      res.status(401).json("Users can only update their own posts!");
+      res.status(401).json("You can update only your post!");
     }
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-// Delete Post Route
+//DELETE POST
 router.delete("/:id", async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);
     if (post.username === req.body.username) {
       try {
         await post.delete();
-        res.status(200).json("Your post has been deleted");
+        res.status(200).json("Post has been deleted...");
       } catch (err) {
         res.status(500).json(err);
       }
     } else {
-      res.status(401).json("Users can only delete their own posts!");
+      res.status(401).json("You can delete only your post!");
     }
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-// Get Post Route
+//GET POST
 router.get("/:id", async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);
@@ -66,21 +66,20 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-// Route for all posts by user specific
+//GET ALL POSTS
 router.get("/", async (req, res) => {
   const username = req.query.user;
-  const categoryName = req.query.cat;
+  const catName = req.query.cat;
   try {
     let posts;
     if (username) {
       posts = await Post.find({ username });
-    } else if (categoryName) {
+    } else if (catName) {
       posts = await Post.find({
         categories: {
-          $in: [categoryName],
+          $in: [catName],
         },
       });
-      // fetch all posts if no users or cat name
     } else {
       posts = await Post.find();
     }
@@ -89,4 +88,5 @@ router.get("/", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 module.exports = router;

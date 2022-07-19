@@ -1,16 +1,16 @@
-import NavBar from "./components/navbar/NavBar";
-import Register from "./pages/register/Register";
-import Login from "./pages/login/Login";
 import Home from "./pages/home/Home";
+import NavBar from "./components/navbar/NavBar"
 import Single from "./pages/single/Single";
 import Write from "./pages/write/Write";
 import Settings from "./pages/settings/Settings";
+import Login from "./pages/login/Login";
+import Register from "./pages/register/Register";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useContext } from "react";
 import { Context } from "./context/Context";
 
 const App = () => {
-  const {user} = useContext(Context);
+  const { user } = useContext(Context);
   return (
     <Router>
       <NavBar />

@@ -1,12 +1,11 @@
-import { Link } from "react-router-dom";
 import "./post.scss";
+import { Link } from "react-router-dom";
 
-const Post = ({ post }) => {
+export default function Post({ post }) {
+  const PF = "http://localhost:4000/images/";
   return (
     <div className="post">
-      {post.photo && (
-        <img className="postImg" src={post.photo} alt="post img" />
-      )}
+      {post.photo && <img className="postImg" src={PF + post.photo} alt="" />}
       <div className="postInfo">
         <div className="postCats">
           {post.categories.map((c) => (
@@ -21,9 +20,7 @@ const Post = ({ post }) => {
           {new Date(post.createdAt).toDateString()}
         </span>
       </div>
-      <p className="postDesc">{post.description}</p>
+      <p className="postDesc">{post.desc}</p>
     </div>
   );
-};
-
-export default Post;
+}

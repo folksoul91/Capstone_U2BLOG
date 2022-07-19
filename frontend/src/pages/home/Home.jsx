@@ -1,14 +1,14 @@
 import "./home.scss";
 import Header from "../../components/header/Header";
-import Sidebar from "../../components/sidebar/Sidebar";
+import { useEffect, useState } from "react";
 import Posts from "../../components/posts/Posts";
+import Sidebar from "../../components/sidebar/Sidebar";
 import axios from "axios";
-import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
-  const {search} = useLocation()
+  const { search } = useLocation();
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -17,7 +17,6 @@ const Home = () => {
     };
     fetchPosts();
   }, [search]);
-
   return (
     <>
       <Header />
